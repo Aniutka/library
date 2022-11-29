@@ -1,0 +1,56 @@
+.booksTitle{
+    background: white;
+    border: 1px solid #eeeeee;
+    margin-bottom: 20px;
+}
+body{
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/* внешние границы таблицы серого цвета толщиной 1px */
+/*table {*/
+/*    border: 1px solid grey;*/
+/*}*/
+/*!* границы ячеек первого ряда таблицы *!*/
+/*th {*/
+/*    border: 1px solid grey;*/
+/*}*/
+/*!* границы ячеек тела таблицы *!*/
+/*td {*/
+/*    border: 1px solid grey;*/
+/*}*/
+table {
+    width: 100%; /* Ширина таблицы */
+}
+td {
+    padding: 5px; /* Поля в ячейках */
+    vertical-align: top; /* Выравнивание по верхнему краю ячеек */
+    border: 1px solid grey;
+}
+th {
+    border: 1px solid grey;
+    background: #ccc;
+    text-align: center;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+
+}
+
+.col_h
+{
+    color: darkslateblue;
+}
+
+#col-d{
+    background-color: blanchedalmond;
+}
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+/*.im{*/
+/*    padding: 0;*/
+/*margin: 0;*/
+
+/*}*/
