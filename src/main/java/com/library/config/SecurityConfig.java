@@ -47,7 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").not().fullyAuthenticated()
                 .antMatchers(HttpMethod.GET, "/books").hasRole("USER")
                 .antMatchers(HttpMethod.GET, "/users").hasRole("USER")
-                .antMatchers(HttpMethod.GET, "/usersBooks").hasRole("USER");
+                .antMatchers(HttpMethod.GET, "/usersBooks").hasRole("USER")
+                .antMatchers(HttpMethod.GET, "/usersBooks").hasRole("ADMIN");
 
         http
                 .logout()
