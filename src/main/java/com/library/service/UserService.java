@@ -1,6 +1,7 @@
 package com.library.service;
 
 import com.library.dto.UserDto;
+import com.library.model.entity.Book;
 import com.library.model.entity.User;
 import com.library.model.entity.UserBook;
 import org.springframework.stereotype.Service;
@@ -15,4 +16,9 @@ public interface UserService {
     void saveUser (User user);
     void save(UserDto userDto);
     User getUser(Integer id);
+
+
+List<Book>getBooks(int id);
+
+
 }

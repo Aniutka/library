@@ -8,6 +8,7 @@ import com.library.service.UserBookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 @Service
@@ -41,4 +42,19 @@ public class UserBookImpl implements UserBookService {
         return userBookRepository.findByQuery(id);
     }
 
-}
+    @Override
+    public List<UserBook> findAll1() {
+        return userBookRepository.findByQuery1();
+    }
+
+    @Override
+    public List<Book> getBooksByUser(Integer id){
+        List<UserBook> userBooks = userBookRepository.findBooksByUser(id);
+        List<Book> books = new ArrayList<>();
+        for(UserBook userBook: userBooks ) {
+            books.add(userBook.getBook());
+        }
+        return books;
+    }
+    }
+

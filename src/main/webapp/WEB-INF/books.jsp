@@ -27,11 +27,11 @@
             <a href="<c:url value="/author"/>">Авторы</a><br>
         </li>
         <li class="list-group-item">
-            <a href="/catalog/articles">Издательство</a>
+            <a href="<c:url value="/publishing"/>">Издательство</a>
         </li>
-        <li class="list-group-item">
-            <a href="/catalog/acts">Дата издания</a>
-        </li>
+<%--        <li class="list-group-item">--%>
+<%--            <a href="/catalog/acts">Дата издания</a>--%>
+<%--        </li>--%>
     </ul>
     <hr>
     <c:import url="/add/foot.jsp"/>

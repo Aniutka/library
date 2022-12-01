@@ -1,8 +1,6 @@
 package com.library.model.entity;
 
-import lombok.Data;
-import lombok.ToString;
-import lombok.Value;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,7 +14,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class User implements UserDetails {
 
@@ -41,9 +40,10 @@ public class User implements UserDetails {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @ToString.Exclude
+    @OneToMany(mappedBy = "user")
+   @ToString.Exclude
     private List<UserBook> userBooks;
+
     @Column
     private boolean accountNonExpired;
     @Column
@@ -63,7 +63,6 @@ public class User implements UserDetails {
         roles.forEach(role -> authorities.add(new SimpleGrantedAuthority(role.toString())));
         return authorities;
     }
-
 
 
 

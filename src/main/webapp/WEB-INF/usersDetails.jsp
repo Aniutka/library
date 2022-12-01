@@ -10,20 +10,19 @@
 <c:import url="menu.jsp"/>
 
 <br>
-
 <table class="table itemDisplayTable">
-    <tbody><tr><td class="metadataFieldLabel dc_title">Название:&nbsp;</td><td class="metadataFieldValue dc_title">${userBook}</td></tr>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">Авторы:</td><td class="metadataFieldValue dc_title">--%>
-<%--        <c:forEach items="${userBook.book}" var ="author">--%>
-<%--            ${book.name}<br>--%>
-<%--        </c:forEach>--%>
-<%--    </td></tr>--%>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">Жанр:&nbsp;</td><td class="metadataFieldValue dc_title">${book.genre.name}</td></tr>--%>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">Дата публикации:&nbsp;</td><td class="metadataFieldValue dc_title">${book.year_publishing}</td></tr>--%>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">Количество страниц:&nbsp;</td><td class="metadataFieldValue dc_title">${book.number_pages}</td></tr>--%>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">ISBN:&nbsp;</td><td class="metadataFieldValue dc_title">${book.isbn}</td></tr>--%>
-<%--    <tbody><tr><td class="metadataFieldLabel dc_title">Количество:&nbsp;</td><td class="metadataFieldValue dc_title">${book.amount}</td></tr>--%>
-    </tbody></table>
+    <tr>
+        <th id="t1" class="oddRowEvenCol">Название книги</th>
+<%--        <th id="t2" class="oddRowOddCol">Дата заказа</th>--%>
+    </tr>
+    <c:forEach items="${books}" var ="userBooks">
+        <tr><td headers="t1">${userBooks.name} </td></tr>
+<%--        <td headers="t2">${userBooks.userBooks.order_data}</td></tr>--%>
+    </c:forEach>
+
+
+
+</table>
 
 </body>
 

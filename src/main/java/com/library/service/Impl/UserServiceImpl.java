@@ -5,6 +5,7 @@ import com.library.dto.UserDto;
 import com.library.model.entity.Book;
 import com.library.model.entity.User;
 import com.library.model.repository.AddressRepository;
+import com.library.model.repository.BookRepository;
 import com.library.model.repository.UserRepository;
 import com.library.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final AddressRepository addressRepository;
+    private final BookRepository bookRepository;
 
     @Override
     public List<User> findAll() {
@@ -68,6 +70,18 @@ public class UserServiceImpl implements UserService {
         return userRepository.getReferenceById(id);
     }
 
+    @Override
+    public List<Book> getBooks(int id) {
+        return bookRepository.findByUserBooks(getUser(id));
+    }
 
-}
+
+
+
+
+
+
+
+    }
+
 

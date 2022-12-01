@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Calendar;
 import java.util.List;
 
 @Controller
@@ -39,14 +40,40 @@ public class UserController {
         model.addAttribute("userBooks", usersBooks);
         return "userBooks";
     }
+
+    @GetMapping(value = "/usersBooks2")
+    public String usersBook2(@RequestParam Integer id, Model model) {
+        List<UserBook> userBooks=userBookService.findAll1();
+        model.addAttribute("userBooks1", userBooks);
+        return "userBooks1";
+    }
+
+//    @GetMapping(value = "/usersBooks1")
+//    public String usersBook2(@RequestParam Integer id, Model model) {
+//        List<UserBook> userBooks=userBookService.findAll1();
+//        model.addAttribute("userBooks1", userBooks);
+//        return "userBooks1";
+//    }
+
     @GetMapping(value = "/usersDetails")
     public String getUser(@RequestParam Integer id, Model model) {
-        var userBook= userBookService.getUserBook(id);
-        List<Book> listBooks=userBookService.findListBook(id);
-        model.addAttribute("userBook", userBook);
-        model.addAttribute("listBooks", listBooks);
+        List<Book> books = userBookService.getBooksByUser(id);
+       // List<Book> books1 = service.getBooks(id);
+       model.addAttribute("user", service.getUser(id));
+        model.addAttribute("books", books);
+      //  var user= service.getUser(id);
         return "usersDetails";
     }
+
+//
+//    @GetMapping(value = "/usersDetails")
+//    public String getUser(@RequestParam Integer id, Model model) {
+//        var user= service.findById(id);
+//        List<Book> listBooks=userBookService.findListBook(id);
+//        model.addAttribute("user", user);
+//        model.addAttribute("listBooks", listBooks);
+//        return "usersDetails";
+//    }
 
 
 

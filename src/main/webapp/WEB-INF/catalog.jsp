@@ -23,10 +23,11 @@
         </li>
     </ul>
     <hr>
-    <footer>
-        <p>© БГТУ DevTeam 2022</p>
-    </footer>
-</div>
 
+</div>
+<footer>
+    <p>© БГТУ DevTeam 2022</p>
+</footer>
 </body>
+
 </html>

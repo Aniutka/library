@@ -1,12 +1,15 @@
 package com.library.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Book {
     @Id
@@ -25,9 +28,11 @@ public class Book {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "publishing_id")
     private Publishing publishing;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "genre_id")
     private Genre genre;
+
     @ManyToMany
     @JoinTable(
             name = "book_author",

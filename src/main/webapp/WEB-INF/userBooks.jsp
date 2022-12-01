@@ -18,9 +18,11 @@
 <c:forEach items="${userBooks}" var="user">
     <tr>
         <td headers="t2"><a href="<c:url value="/usersDetails?id=${user.user.id}"/>">${user.user.name}</a></td>
-        <td headers="t3"><em><c:forEach items="${userBooks}" var ="book">${book.book.name}<br></c:forEach></em></td>
+        <td headers="t3"><em>${user.book.name}</em></td>
     </tr>
         </c:forEach>
+
+
 
     </div>
 </table>
