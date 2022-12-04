@@ -46,6 +46,22 @@ public class Book {
     @ToString.Exclude
     private List<UserBook> userBooks;
 
+//    @Override
+//    public String toString() {
+//        final StringBuilder sb = new StringBuilder("Book{");
+//        sb.append("id=").append(id);
+//        sb.append(", name='").append(name).append('\'');
+//        sb.append(", year_publishing='").append(year_publishing).append('\'');
+//        sb.append(", number_pages=").append(number_pages);
+//        sb.append(", isbn=").append(isbn);
+//        sb.append(", amount=").append(amount);
+//        sb.append(", publishing=").append(publishing);
+//        sb.append(", genre=").append(genre);
+//        sb.append(", authors=").append(authors);
+//        sb.append(", userBooks=").append(userBooks);
+//        sb.append('}');
+//        return sb.toString();
+//    }
 }
 
 

@@ -19,8 +19,8 @@
 <div id="container">
 
         <div id="col-d">
-<%--            <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news_log.png"/></a>--%>
-            <a class="navbar-brand" href="#">News></a>
+<center>
+            <a class="navbar-brand" href="#">News</a></center>
                 </div>
             </a>
         <br>
@@ -31,40 +31,68 @@
     <div class="container c_corr">
         <div class="row">
 
-    <div class="col-md-4">
-
+            <div class="col-md-auto">
                 <div class="main_news_block">
-                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news.jpg"/></a>
+                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news.jpg"/></a><br>
+                    <LABEL><b>Как восстанавливают древние книги в Национальной библиотеке<b></LABEL>
                 </div>
-                    <div class="for_text_news">
-                    <p>Как восстанавливают древние книги в Национальной библиотеке</p>
+            </div>
+
+        <div class="col-md-auto">
+                <div class="main_news_block">
+                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a><br>
+                    <LABEL>Открытый просмотр «Галерея книжных новинок»</LABEL>
+                </div>
+        </div>
+
+            <div class="col-md-auto">
+                <div class="main_news_block">
+                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news4.jpg"/></a><br>
+                    <LABEL>Новинки детской литературыы</LABEL>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
-        <div class="col-md-4">
-            <a href="/news.jsp" class="news_link">
-                <div class="main_news_block">
-                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a>
-                    <div class="for_text_news">
-                        <p>Открытый просмотр «Галерея книжных новинок»</p>
-                    </div>
-                </div>
-            </a>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a><br>
         </div>
-        <div class="col-md-4">
-            <a href="/news.jsp" class="news_link">
-                <div class="main_news_block">
-                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news4.jpg"/></a>
-                    <div class="for_text_news">
-                        <p>Новинки детской литературыы</p>
-                    </div>
-                </div>
-            </a>
+        <div class="col-sm">
+            <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a><br>
+        </div>
+        <div class="col-sm">
+            <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a><br>
         </div>
     </div>
 </div>
 
-</div>
-</div>
+<%--        <div class="row">--%>
+<%--            <div class="col-md-2"></div>--%>
+<%--        <div class="col-md-8">--%>
+<%--                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a>--%>
+<%--                        <p>Открытый просмотр «Галерея книжных новинок»</p>--%>
+<%--        </div>--%>
+<%--            <div class="col-md-2"></div>--%>
+
+<%--            <div class="row">--%>
+<%--                <div class="col-md-2"></div>--%>
+<%--            <div class="col-md-8">--%>
+<%--            <a href="/news.jsp" class="news_link">--%>
+<%--                <div class="main_news_block">--%>
+<%--                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news4.jpg"/></a>--%>
+<%--                    <div class="for_text_news">--%>
+<%--                        <p>Новинки детской литературыы</p>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </a>--%>
+<%--        </div>--%>
+<%--            <div class="col-md-2">--%>
+<%--    </div>--%>
+<%--            </div>--%>
 
 
 </body>

@@ -13,6 +13,15 @@
 
 <div class="container">
 
+    <form action="<c:url value="/findAuthors"/>">
+        <input name="name">
+        <input type="submit" value="Поиск" class="btn btn-primary"></input>
+    </form>
+
+    <a href="<c:url value="/showCreateAuthors"/>">Добавить автора</a><br>
+    <hr>
+    <br>
+
 <table>
     <tbody>
     <tr>

@@ -3,6 +3,7 @@ package com.library.controller;
 import com.library.dto.CreateDto;
 import com.library.model.entity.Author;
 import com.library.model.entity.Book;
+import com.library.model.entity.User;
 import com.library.model.entity.UserBook;
 import com.library.service.AuthorService;
 import com.library.service.BookService;
@@ -56,6 +57,8 @@ public class BookController {
     @GetMapping(value = "/showCreateBook")
     public String showCreateBook(Model model) {
         model.addAttribute("createBook", new CreateDto());
+        List <Author> authors = authorService.findAll();
+        model.addAttribute("authors", authors);
         return "createBook";
     }
 
@@ -68,26 +71,27 @@ public class BookController {
     }
 
 
-    @GetMapping(value = "/createBook")
-    public String createBook(@RequestParam String name, @RequestParam String year, @RequestParam Integer numberPage, @RequestParam Integer author, Model model) {
-        var createDto = new CreateDto();
-        createDto.setName(name);
-        createDto.setYear(year);
-        createDto.setNumberPage(numberPage);
-        createDto.setAuthorId(author);
-
-        bookService.save(createDto);
-        var books = bookService.findAll();
-        model.addAttribute("books", books);
-        return "booksTitle";
-    }
+//    @GetMapping(value = "/createBook")
+//    public String createBook(@RequestParam String name, @RequestParam String year, @RequestParam Integer numberPage, @RequestParam Integer author, Model model) {
+//        var createDto = new CreateDto();
+//        createDto.setName(name);
+//        createDto.setYear(year);
+//        createDto.setNumberPage(numberPage);
+//        createDto.setAuthorId(author);
+//
+//        bookService.save(createDto);
+//        var books = bookService.findAll();
+//        model.addAttribute("books", books);
+//        return "booksTitle";
+//    }
 
     @GetMapping(value = "/findBook")
     public String findBook(@RequestParam String name,Model model) {
-      var book=bookService.findBookName(name);
-        model.addAttribute("book", book);
-       // return "findBook";
-        return "booksDetails";
+//      var book=bookService.findBookName(name);
+//        model.addAttribute("book", book);
+        List<Book> books=bookService.findByQueryList(name);
+        model.addAttribute("books", books);
+        return "booksTitle";
     }
 
 

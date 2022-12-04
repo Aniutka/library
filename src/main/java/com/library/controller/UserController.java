@@ -65,6 +65,21 @@ public class UserController {
         return "usersDetails";
     }
 
+    @GetMapping(value = "/UserDelete")
+    public String deleteUser(@RequestParam Integer id, Model model) {
+        model.addAttribute("user", service.getUser(id));
+        return "userDelete";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam Integer id,Model model) {
+        service.delete(id);
+        List<User> usersList = service.findAll();
+        model.addAttribute("users", usersList);
+        return "users";
+    }
+
+
 //
 //    @GetMapping(value = "/usersDetails")
 //    public String getUser(@RequestParam Integer id, Model model) {
@@ -91,13 +106,31 @@ public class UserController {
         return "index";
     }
 
+
     @PostMapping(value = "/authorization")
     public String authorization(@ModelAttribute(value = "registration") UserDto userDto, Model model) {
         var users = service.findByQuery(userDto.getName());
-
         model.addAttribute("users",users);
         return "index";
     }
+
+    @GetMapping(value = "/findUsers")
+    public String findUser(@RequestParam String name,Model model) {
+//        var user=service.findByQuery(name);
+        List<User> users=service.findByQueryList(name);
+        model.addAttribute("users", users);
+        // return "findBook";
+        return "users";
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

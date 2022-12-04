@@ -27,7 +27,7 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
-                         <a class="nav-link" href="<c:url value ="/catalog"/>">Catalog</a>
+                         <a class="nav-link" href="<c:url value ="/books"/>">Catalog</a>
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="<c:url value ="/users"/>">Reader</a>
@@ -60,7 +60,7 @@
 
  <br>
  <center>
-         <h1 class="col_h">"Library"</h1><a class="im" href="#">
+         <h1 class="col_h">Library</h1><a class="im" href="#">
 
  </center>
 

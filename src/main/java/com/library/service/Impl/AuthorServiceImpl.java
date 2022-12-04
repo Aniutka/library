@@ -2,6 +2,7 @@ package com.library.service.Impl;
 
 import com.library.model.entity.Author;
 import com.library.model.entity.Book;
+import com.library.model.entity.User;
 import com.library.model.repository.AddressRepository;
 import com.library.model.repository.AuthorRepository;
 import com.library.service.AuthorService;
@@ -20,9 +21,9 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.findAll();
     }
 
-    @Override
-    public Author findByAuthor(Integer id) {
-        return authorRepository.getReferenceById(id);
+        @Override
+        public List<Author> findByQueryList(String name) {
+            return authorRepository.findByNameStartingWith(name);
     }
 
     @Override

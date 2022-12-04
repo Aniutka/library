@@ -13,6 +13,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-2"></div>
+
 		<div class="col-md-8">
 
 			<spring_form:form method="post" action="${registrationUser}" modelAttribute="registration">
@@ -56,12 +57,11 @@
 				<input type="submit" value="Зарегестрироваться">
 
 </spring_form:form>
+		</div>
 
-			</div>
 			<div class="col-md-2"></div>
 		</div>
 	</div>
-
 
 </body>
 </html>

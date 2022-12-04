@@ -2,6 +2,7 @@ package com.library.controller;
 
 import com.library.model.entity.Author;
 import com.library.model.entity.Book;
+import com.library.model.entity.User;
 import com.library.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,11 @@ public class AuthorController {
     }
 
 
+    @GetMapping(value = "/findAuthors")
+    public String findAuthor(@RequestParam String name,Model model) {
+        List<Author> authors=authorService.findByQueryList(name);
+        model.addAttribute("author", authors);
+        return "author";
+    }
 
 }

@@ -18,5 +18,6 @@ public interface UserBookService {
 
     List<Book> getBooksByUser(Integer id);
 
+    void returnedBook(Integer id);
 
 }

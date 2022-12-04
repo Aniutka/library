@@ -1,28 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style><%@include file="/WEB-INF/css/style.css"%></style>
 <html>
 <head>
 </head>
 <body>
 <c:import url="menu.jsp"/>
-Заказ книги прошел успешно!!!
 
+<div style="margin-left: 41%">
+<p> Заказ книги прошел успешно!!!<br>
 Читатель: ${userBooks.user.name} <br>
-Книга: ${userBooks.book.name}
-<%--<div class="container">--%>
-<%--    <ul class="list-group">--%>
-<%--        <li class="list-group-item">--%>
-<%--            <a href="<c:url value="/booksTitle"/>">Абонемент</a><br>--%>
+Книга: ${userBooks.book.name} </p>
 
-<%--        </li>--%>
-<%--        <li class="list-group-item">--%>
-<%--            <a href="<c:url value="/author"/>">Читальный зал</a><br>--%>
-<%--        </li>--%>
-<%--    </ul>--%>
+    <a href="<c:url value="/"/>">На главную</a>
+    <a href="<c:url value="/booksTitle"/>">К каталогу книг</a>
 
-    <c:import url="/add/foot.jsp"/>
+
 
 </div>
-
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>

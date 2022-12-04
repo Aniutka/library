@@ -13,10 +13,12 @@
 <table class="table itemDisplayTable">
     <tr>
         <th id="t1" class="oddRowEvenCol">Название книги</th>
+        <th id="t2" class="oddRowEvenCol"></th>
 <%--        <th id="t2" class="oddRowOddCol">Дата заказа</th>--%>
     </tr>
     <c:forEach items="${books}" var ="userBooks">
-        <tr><td headers="t1">${userBooks.name} </td></tr>
+        <tr><td headers="t1">${userBooks.name} </td>
+            <td headers="t2"><a href="<c:url value="/UserBookReturned?id=${userBooks.id}"/>">Вернуть книгу</a></td></tr>
 <%--        <td headers="t2">${userBooks.userBooks.order_data}</td></tr>--%>
     </c:forEach>
 

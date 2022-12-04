@@ -60,6 +60,11 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(book);
     }
 
+    @Override
+    public List<Book> findByQueryList(String name) {
+        return bookRepository.findByNameStartingWith(name);
+    }
+
 //    @Override
 //    public List<Book>find(String name) {
 //      List<Book> booksAll = bookRepository.findAll();

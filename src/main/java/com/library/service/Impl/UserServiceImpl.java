@@ -3,14 +3,18 @@ package com.library.service.Impl;
 import com.library.dto.CreateDto;
 import com.library.dto.UserDto;
 import com.library.model.entity.Book;
+import com.library.model.entity.Role;
 import com.library.model.entity.User;
+import com.library.model.entity.UserBook;
 import com.library.model.repository.AddressRepository;
 import com.library.model.repository.BookRepository;
+import com.library.model.repository.UserBookRepository;
 import com.library.model.repository.UserRepository;
 import com.library.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,6 +24,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final AddressRepository addressRepository;
     private final BookRepository bookRepository;
+    private final UserBookRepository userBookRepository;
 
     @Override
     public List<User> findAll() {
@@ -37,6 +42,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findByQueryList(String name) {
+        return userRepository.findByNameStartingWith(name);
+    }
+
+    @Override
     public List<User> findByStreet(String street) {
         return userRepository.findByAddress_Street(street);
     }
@@ -44,8 +54,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
-        userRepository.save(user);
 
+
+        userRepository.save(user);
     }
 
     @Override
@@ -57,6 +68,8 @@ public class UserServiceImpl implements UserService {
         user.setDateBirth(userDto.getDateBirth());
         user.setDateRegistration(userDto.getDateRegistration());
         user.setPlaceWork(userDto.getPlaceWork());
+        user.setRoles(Collections.singletonList(Role.ROLE_USER));
+//        user.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
 //        var addressId = userDto.getAddressId();
 //        if(addressId!=null){
 //            var address=addressRepository.getReferenceById(addressId);
@@ -67,7 +80,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Integer id) {
-        return userRepository.getReferenceById(id);
+        User user = userRepository.getReferenceById(id);
+        return user;
     }
 
     @Override
@@ -75,13 +89,23 @@ public class UserServiceImpl implements UserService {
         return bookRepository.findByUserBooks(getUser(id));
     }
 
-
-
-
-
-
-
-
+    @Override
+    public void delete(Integer id) {
+        userRepository.deleteById(id);
     }
+
+//    @Override
+//    public void deleteBook(Integer id) {
+//            List<UserBook> userBooks = userBookRepository.findBooksByUser(id);
+//            userBooks.remove()
+//            for(UserBook userBook: userBooks ) {
+//                books.add(userBook.getBook());
+//            }
+//            return books;
+//        }
+    }
+
+
+
 
 

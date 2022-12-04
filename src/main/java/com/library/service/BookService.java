@@ -16,6 +16,6 @@ Book getBook(Integer id);
     Book findById(Integer id);
 
 void save(CreateDto createDto);
-
+    List<Book> findByQueryList(String name);
 }
 

@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.List;
 
 @Controller
@@ -34,15 +36,28 @@ public class UserBookController {
     }
 
     @GetMapping(value = "/orderBook")
-    public String creatOrderBook(@RequestParam Integer idBook, @RequestParam Integer idUser, @RequestParam Integer location, @RequestParam Date data, Model model) {
+    public String creatOrderBook(@RequestParam Integer idBook, @RequestParam Integer idUser, @RequestParam Integer location, Model model) {
         var userBook = new UserBook();
         userBook.setUser(userService.findById(idUser));
         userBook.setBook(bookService.findById(idBook));
         userBook.setLocation(locationService.findById(location));
-        userBook.setOrder_data(data);
+//        userBook.setOrder_data(LocalDate.now ());
+        userBook.setOrder_data(Calendar.getInstance());
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, 1);
+//        userBook.setOrder_data(LocalDate.now ());
+//        userBook.setReturn_data(userBook.getOrder_data().plusMonths(1));
+        userBook.setReturn_date(cal);
+        userBook.setIsReturn(1);
         userBookService.save(userBook);
         model.addAttribute("userBooks", userBook);
         return "order";
+    }
+
+    @GetMapping(value = "/UserBookReturned")
+    public String refundBook(@RequestParam Integer id, Model model) {
+       userBookService.returnedBook(id);
+        return "index";
     }
 
 

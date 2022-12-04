@@ -4,9 +4,13 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Type;
+import org.hibernate.type.BooleanType;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -31,24 +35,22 @@ public class UserBook {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id")
     private Location location;
+
     @ToString.Exclude
     @Column
-    private Date order_data;
+    @Temporal(TemporalType.DATE)
+    private Calendar order_data;
 
+    @ToString.Exclude
+    @Column
+    @Temporal(TemporalType.DATE)
+    private Calendar return_date;
+
+   @Column(name = "return_book")
+//    @Column(name = "return",columnDefinition = "BIT")
+//    @Type(type = "org.hibernate.type.NumericBooleanType")
+    private Integer isReturn;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

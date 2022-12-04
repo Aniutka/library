@@ -4,7 +4,9 @@ import com.library.model.entity.Book;
 import com.library.model.entity.User;
 import com.library.model.entity.UserBook;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -18,6 +20,19 @@ public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
     List<UserBook> findByQuery1();
 
     @Transactional
-    @Query(" FROM UserBook where user.id=:id")
+    @Query(" FROM UserBook where user.id=:id and isReturn=1")
     List <UserBook>findBooksByUser(Integer id);
+
+
+    @Query(" FROM UserBook where book.id=:id and isReturn=1")
+    UserBook returnedBook(Integer id);
+
+
+//    @Query("update UserBook set isReturn=0 WHERE isReturn")
+//    String updateBook(Integer isReturn);
+
+    @Modifying
+    @Query("Update UserBook SET isReturn=:isReturn")
+    public void updateBook(@Param("isReturn") Integer isReturn);
+
 }

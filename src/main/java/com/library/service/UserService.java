@@ -17,8 +17,13 @@ public interface UserService {
     void save(UserDto userDto);
     User getUser(Integer id);
 
+    List<User> findByQueryList(String name);
 
 List<Book>getBooks(int id);
+
+void delete(Integer id);
+//void deleteBook(Integer id);
+
 
 
 }
