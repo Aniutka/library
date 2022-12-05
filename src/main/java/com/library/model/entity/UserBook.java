@@ -47,16 +47,5 @@ public class UserBook {
     private Calendar return_date;
 
    @Column(name = "return_book")
-//    @Column(name = "return",columnDefinition = "BIT")
-//    @Type(type = "org.hibernate.type.NumericBooleanType")
     private Integer isReturn;
 }
-
-
-
-
-//    @OneToMany(cascade = CascadeType.ALL)
-////    @JoinColumn(name = "book_id")
-////    private Book book;
-//    @ToString.Exclude
-//    private List<Book> books;

@@ -71,28 +71,11 @@ public class BookController {
     }
 
 
-//    @GetMapping(value = "/createBook")
-//    public String createBook(@RequestParam String name, @RequestParam String year, @RequestParam Integer numberPage, @RequestParam Integer author, Model model) {
-//        var createDto = new CreateDto();
-//        createDto.setName(name);
-//        createDto.setYear(year);
-//        createDto.setNumberPage(numberPage);
-//        createDto.setAuthorId(author);
-//
-//        bookService.save(createDto);
-//        var books = bookService.findAll();
-//        model.addAttribute("books", books);
-//        return "booksTitle";
-//    }
-
     @GetMapping(value = "/findBook")
     public String findBook(@RequestParam String name,Model model) {
-//      var book=bookService.findBookName(name);
-//        model.addAttribute("book", book);
         List<Book> books=bookService.findByQueryList(name);
         model.addAttribute("books", books);
         return "booksTitle";
     }
-
 
 }

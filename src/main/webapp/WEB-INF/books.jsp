@@ -8,13 +8,9 @@
 <div class="container">
 
     <form action="<c:url value="/findBook"/>">
-    <input name="name">
-            <input type="submit" value="Поиск" class="btn btn-primary"></input>
+        <input name="name">
+        <input type="submit" value="Поиск" class="btn btn-primary"></input>
     </form>
-
-
-
-
     <a href="<c:url value="/showCreateBook"/>">Добавить книгу</a><br>
     <hr>
     <br>
@@ -29,14 +25,9 @@
         <li class="list-group-item">
             <a href="<c:url value="/publishing"/>">Издательство</a>
         </li>
-<%--        <li class="list-group-item">--%>
-<%--            <a href="/catalog/acts">Дата издания</a>--%>
-<%--        </li>--%>
     </ul>
     <hr>
-    <c:import url="/add/foot.jsp"/>
-
 </div>
-
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>

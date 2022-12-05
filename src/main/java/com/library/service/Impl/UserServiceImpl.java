@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByQuery(String name) {
-      return userRepository.findByQuery(name);
+        return userRepository.findByQuery(name);
     }
 
     @Override
@@ -54,8 +54,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
-
-
         userRepository.save(user);
     }
 
@@ -103,7 +101,7 @@ public class UserServiceImpl implements UserService {
 //            }
 //            return books;
 //        }
-    }
+}
 
 
 

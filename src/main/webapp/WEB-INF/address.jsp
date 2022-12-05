@@ -7,7 +7,6 @@
 </head>
 <body>
 <p>АДРЕСА</p>
-
 <c:forEach items="${address}" var="adress">
     ${adress.city}
     ${adress.street}<br>

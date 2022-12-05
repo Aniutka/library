@@ -10,14 +10,22 @@
 <c:import url="menu.jsp"/>
 
 <table class="table itemDisplayTable">
-    <tbody><tr><td class="metadataFieldLabel dc_title">Автор:&nbsp;</td><td class="metadataFieldValue dc_title">${author.name}</td></tr>
-    <tbody><tr><td class="metadataFieldLabel dc_title">Название книг:&nbsp;</td><td class="metadataFieldValue dc_title">
-        <c:forEach items="${author.books}" var ="author">
-            <a href="<c:url value="/booksDetails?id=${author.id}"/>">${author.name}</a><br>
-        </c:forEach>
-    </td></tr>
-    </tbody></table>
-
+    <tbody>
+    <tr>
+        <td class="metadataFieldLabel dc_title">Автор:&nbsp;</td>
+        <td class="metadataFieldValue dc_title">${author.name}</td>
+    </tr>
+    <tbody>
+    <tr>
+        <td class="metadataFieldLabel dc_title">Название книг:&nbsp;</td>
+        <td class="metadataFieldValue dc_title">
+            <c:forEach items="${author.books}" var="author">
+                <a href="<c:url value="/booksDetails?id=${author.id}"/>">${author.name}</a><br>
+            </c:forEach>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<c:import url="/add/foot.jsp"/>
 </body>
-
 </html>

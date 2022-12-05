@@ -49,16 +49,6 @@ public class UserBookImpl implements UserBookService {
         return userBookRepository.findByQuery1();
     }
 
-//    @Override
-//    public List<Book> getBooksByUser(Integer id){
-//        List<UserBook> userBooks = userBookRepository.findBooksByUser(id);
-//        List<Book> books = new ArrayList<>();
-//        for(UserBook userBook: userBooks ) {
-//            books.add(userBook.getBook());
-//        }
-//        return books;
-//    }
-
     @Override
     public List<Book> getBooksByUser(Integer id){
         List<UserBook> userBooks = userBookRepository.findBooksByUser(id);
@@ -74,7 +64,6 @@ public class UserBookImpl implements UserBookService {
         var userBook = new UserBook();
         userBook = userBookRepository.returnedBook(id);
         userBook.setIsReturn(0);
-//        userBookRepository.updateBook(userBook.getIsReturn());
         userBookRepository.save(userBook);
     }
 

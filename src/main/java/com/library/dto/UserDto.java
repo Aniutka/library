@@ -18,6 +18,5 @@ public class UserDto {
     private Date dateBirth;
     private Date dateRegistration;
     private String placeWork;
-//    private Integer addressId;
 
 }

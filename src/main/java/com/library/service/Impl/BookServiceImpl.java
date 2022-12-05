@@ -19,11 +19,6 @@ public class BookServiceImpl implements BookService {
   private final BookRepository bookRepository;
   private final AuthorRepository authorRepository;
 
-//    @Autowired
-//    public BookServiceImpl(BookRepository bookRepository) {
-//        this.bookRepository = bookRepository;
-//    }
-
     @Override
     public List<Book> findAll() {
 
@@ -64,19 +59,5 @@ public class BookServiceImpl implements BookService {
     public List<Book> findByQueryList(String name) {
         return bookRepository.findByNameStartingWith(name);
     }
-
-//    @Override
-//    public List<Book>find(String name) {
-//      List<Book> booksAll = bookRepository.findAll();
-//      List<Book> books = new Book();
-//        for (Book book1:booksAll) {
-//            if (book1.getName().equals(name)){
-//               book.setId(book1.getId());
-//            }
-//        }
-//        return bookRepository.getReferenceById(book.getId());
-//    }
-
-
 
 }

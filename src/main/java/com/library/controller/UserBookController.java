@@ -30,7 +30,6 @@ public class UserBookController {
 
     @GetMapping(value = "/showorderBook")
     public String orderBook(@RequestParam Integer id, Model model) {
-        //  model.addAttribute("orderBook", new UserBook());
         model.addAttribute("id", id);
         return "orderBook";
     }
@@ -41,12 +40,9 @@ public class UserBookController {
         userBook.setUser(userService.findById(idUser));
         userBook.setBook(bookService.findById(idBook));
         userBook.setLocation(locationService.findById(location));
-//        userBook.setOrder_data(LocalDate.now ());
         userBook.setOrder_data(Calendar.getInstance());
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, 1);
-//        userBook.setOrder_data(LocalDate.now ());
-//        userBook.setReturn_data(userBook.getOrder_data().plusMonths(1));
         userBook.setReturn_date(cal);
         userBook.setIsReturn(1);
         userBookService.save(userBook);

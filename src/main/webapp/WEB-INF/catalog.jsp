@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Каталог</title>
 </head>
 <body>
 <c:import url="menu.jsp"/>
@@ -25,9 +25,7 @@
     <hr>
 
 </div>
-<footer>
-    <p>© БГТУ DevTeam 2022</p>
-</footer>
+<c:import url="/add/foot.jsp"/>
 </body>
 
 </html>

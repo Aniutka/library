@@ -12,15 +12,7 @@
 
 <p>Добавление книги</p>
 
-<%--<form action="<c:url value="/createBook"/>">--%>
-<%--    <label>Название книги</label><input name="name"><br>--%>
-<%--    <label>Год</label><input name="year"><br>--%>
-<%--    <label>Кол-во страниц</label><input name="numberPage"><br>--%>
-<%--    <label>Автор</label><input name="author"><br>--%>
-<%--    <input type="submit" value="createBook">--%>
-<%--</form>--%>
 <br>
-    --------------
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>

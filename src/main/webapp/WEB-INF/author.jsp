@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style><%@include file="/WEB-INF/css/style.css"%></style>
+<style>
+    <%@include file="/WEB-INF/css/style.css" %>
+</style>
 
 
 <html>
@@ -22,20 +24,21 @@
     <hr>
     <br>
 
-<table>
-    <tbody>
-    <tr>
-        <th>Авторы</th>
-    </tr>
-
-    <c:forEach items="${author}" var="authorList">
+    <table>
+        <tbody>
         <tr>
-       <td> <a href="<c:url value="/authorBook?id=${authorList.id}"/>">${authorList.name}</a></td>
-    </tr>
-    </c:forEach>
+            <th>Авторы</th>
+        </tr>
 
-    </tbody>
-</table>
+        <c:forEach items="${author}" var="authorList">
+            <tr>
+                <td><a href="<c:url value="/authorBook?id=${authorList.id}"/>">${authorList.name}</a></td>
+            </tr>
+        </c:forEach>
+
+        </tbody>
+    </table>
 </div>
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>

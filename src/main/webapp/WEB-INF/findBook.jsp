@@ -11,7 +11,8 @@
 <c:import url="menu.jsp"/>
 
 <table>
-    <tbody><tr>
+    <tbody>
+    <tr>
         <th id="t1" class="oddRowEvenCol">Дата выпуска</th>
         <th id="t2" class="oddRowOddCol">Название</th>
         <th id="t3" class="oddRowEvenCol">Автор(ы)</th>
@@ -21,17 +22,18 @@
         <td headers="t1"><em>${book.year_publishing}</em></td>
         <td>
             <a href="<c:url value="/booksDetails?id=${book.id}"/>">${book.name}</a><br>
-        <td headers="t3"><em> <c:forEach items="${book.authors}" var ="author">
+        <td headers="t3"><em>
+            <c:forEach items="${book.authors}" var="author">
                 ${author.name}<br>
             </c:forEach>
-         </td>
+        </td>
         <td headers="t1"><em>${book.publishing.name}</em></td>
 
     </tr>
     </tbody>
 </table>
-
 <br>
+<c:import url="/add/foot.jsp"/>
 </body>
 
 </html>

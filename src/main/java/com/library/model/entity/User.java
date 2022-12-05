@@ -41,7 +41,7 @@ public class User implements UserDetails {
     private Address address;
 
     @OneToMany(mappedBy = "user")
-   @ToString.Exclude
+    @ToString.Exclude
     private List<UserBook> userBooks;
 
     @Column
@@ -63,14 +63,5 @@ public class User implements UserDetails {
         roles.forEach(role -> authorities.add(new SimpleGrantedAuthority(role.toString())));
         return authorities;
     }
-
-
-
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(name = "user_book",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "book_id")
-//    )
-//    private List<Book> books;
 
 }

@@ -28,5 +28,6 @@
     </tbody>
 </table>
 </div>
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>

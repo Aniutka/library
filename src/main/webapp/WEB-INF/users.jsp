@@ -28,7 +28,6 @@
 
     </tr>
 
-
     <c:forEach items="${users}" var="user">
     <tr>
         <td headers="t1">${user.id}</td>
@@ -36,9 +35,8 @@
         <td headers="t3">${user.dateBirth}</td>
         <td headers="t4">${user.dateRegistration}</td>
         <td headers="t5">${user.placeWork}</td>
-        <td headers="t6">${user.address}</td>
+        <td headers="t6">г.${user.address.city.name}, ${user.address.street}, ${user.address.building}</td>
         <td headers="t7"><a href="<c:url value="/UserDelete?id=${user.id}"/>">Удалить</a></td>
-<%--        <td headers="t6"><a href="<c:url value="/UserDelete?id=${user.id}"/>">Удалить</a></td>--%>
 
     </tr>
     </c:forEach>
@@ -46,6 +44,6 @@
     </div>
 </table>
 <br>
-
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>

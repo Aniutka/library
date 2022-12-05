@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
@@ -21,15 +22,14 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.findAll();
     }
 
-        @Override
-        public List<Author> findByQueryList(String name) {
-            return authorRepository.findByNameStartingWith(name);
+    @Override
+    public List<Author> findByQueryList(String name) {
+        return authorRepository.findByNameStartingWith(name);
     }
 
     @Override
     public Author getAuthor(Integer id) {
         return authorRepository.getReferenceById(id);
     }
-
 
 }

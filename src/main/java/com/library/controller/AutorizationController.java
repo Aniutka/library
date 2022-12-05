@@ -28,9 +28,4 @@ public String logout(HttpServletRequest request) {
         }
         return "redirect:/";
         }
-
-
-
-
-
 }

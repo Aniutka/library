@@ -6,18 +6,7 @@
 body{
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-/* внешние границы таблицы серого цвета толщиной 1px */
-/*table {*/
-/*    border: 1px solid grey;*/
-/*}*/
-/*!* границы ячеек первого ряда таблицы *!*/
-/*th {*/
-/*    border: 1px solid grey;*/
-/*}*/
-/*!* границы ячеек тела таблицы *!*/
-/*td {*/
-/*    border: 1px solid grey;*/
-/*}*/
+
 table {
     width: 100%; /* Ширина таблицы */
 }
@@ -49,12 +38,8 @@ th {
     margin: 0 auto;
 }
 
-.centerr{
-    justify-content: center;
-}
-
-/*.im{*/
-/*    padding: 0;*/
-/*margin: 0;*/
-
+/*.centerr{*/
+/*    justify-content: center;*/
 /*}*/
+
+

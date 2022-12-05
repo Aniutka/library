@@ -13,29 +13,23 @@
         <th id="t2" class="oddRowEvenCol">Reader</th>
         <th id="t3" class="oddRowEvenCol">Book</th>
         <th id="t4" class="oddRowEvenCol">Возвращена</th>
-
-
     </tr>
 
-
-<c:forEach items="${userBooks}" var="user">
-    <tr>
-        <td headers="t2"><a href="<c:url value="/usersDetails?id=${user.user.id}"/>">${user.user.name}</a></td>
-        <td headers="t3"><em>${user.book.name}</em></td>
-        <c:if test="${user.isReturn == 1}">
-            <td headers="t4"><em>Не возвращена</em></td>
-        </c:if>
-        <c:if test="${user.isReturn== 0}">
-            <td headers="t4"><em>Возвращена</em></td>
-        </c:if>
-<%--        <td headers="t4"><em>${user.isReturn}</em></td>--%>
-    </tr>
-        </c:forEach>
-
-
-
+    <c:forEach items="${userBooks}" var="user">
+        <tr>
+            <td headers="t2"><a href="<c:url value="/usersDetails?id=${user.user.id}"/>">${user.user.name}</a></td>
+            <td headers="t3"><em>${user.book.name}</em></td>
+            <c:if test="${user.isReturn == 1}">
+                <td headers="t4"><em>Не возвращена</em></td>
+            </c:if>
+            <c:if test="${user.isReturn== 0}">
+                <td headers="t4"><em>Возвращена</em></td>
+            </c:if>
+        </tr>
+    </c:forEach>
     </div>
 </table>
 <br>
+<c:import url="/add/foot.jsp"/>
 </body>
 </html>
