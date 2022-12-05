@@ -34,42 +34,7 @@
         </div>
     </center>
 </div>
-<%--        <div class="row">--%>
-<%--            <div class="col-md-2"></div>--%>
-<%--            <center>--%>
-<%--                <div class="col-md-8">--%>
-<%--                    <div class="main_news_block">--%>
-<%--                        <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news3.png"/></a>--%>
-<%--                    </div>--%>
-<%--                    <div class="for_text_news">--%>
-<%--                        <p>Как восстанавливают древние книги в Национальной библиотеке</p>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </center>--%>
-<%--                        <div class="col-md-2">--%>
-<%--                        </div>--%>
-<%--        </div>--%>
-<%--                        <div class="row">--%>
-<%--                            <div class="col-md-2"></div>--%>
-<%--                                <div class="col-md-8">--%>
-<%--                                    <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news2.jpg"/></a>--%>
-<%--                                    <p>Открытый просмотр «Галерея книжных новинок»</p>--%>
-<%--                                </div>--%>
-<%--                            <div class="col-md-2"></div>--%>
-<%--                        </div>--%>
-<%--                                    <div class="row">--%>
-<%--                                        <div class="col-md-2"></div>--%>
-<%--                                            <div class="col-md-8">--%>
-<%--                                                    <div class="main_news_block">--%>
-<%--                                                        <a class="navbar-brand" href="#"> <img src="${pageContext.request.contextPath}/images/news4.jpg"/></a></div>--%>
-<%--                                                        <div class="for_text_news">--%>
-<%--                                                            <p>Новинки детской литературыы</p>--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                            <div class="col-md-2"></div>--%>
-<%--                                    </div>--%>
-<%--                            </div>--%>
-<%--                    </div>--%>
+
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <c:import url="/add/foot.jsp"/>
