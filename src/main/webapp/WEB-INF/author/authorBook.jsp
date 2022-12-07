@@ -7,7 +7,7 @@
 <body>
 
 
-<c:import url="menu.jsp"/>
+<c:import url="../menu.jsp"/>
 
 <table class="table itemDisplayTable">
     <tbody>

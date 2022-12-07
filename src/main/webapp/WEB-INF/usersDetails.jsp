@@ -13,7 +13,6 @@
     <tr>
         <th id="t1" class="oddRowEvenCol">Название книги</th>
         <th id="t2" class="oddRowEvenCol"></th>
-        <%--        <th id="t2" class="oddRowOddCol">Дата заказа</th>--%>
     </tr>
     <c:forEach items="${books}" var="userBooks">
         <tr>

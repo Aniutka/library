@@ -64,6 +64,6 @@
     <h1 class="col_h">Библиотека</h1><a class="im" href="#">
 </center>
 <br>
-<%--<c:import url="/add/foot.jsp"/>--%>
+
 </body>
 

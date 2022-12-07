@@ -36,24 +36,15 @@
     <tbody>
     <tr>
         <td class="metadataFieldLabel dc_title">Дата публикации:&nbsp;</td>
-        <td class="metadataFieldValue dc_title">${book.year_publishing}</td>
+        <td class="metadataFieldValue dc_title">${book.yearPublishing}</td>
     </tr>
     <tbody>
     <tr>
         <td class="metadataFieldLabel dc_title">Количество страниц:&nbsp;</td>
-        <td class="metadataFieldValue dc_title">${book.number_pages}</td>
+        <td class="metadataFieldValue dc_title">${book.numberPages}</td>
     </tr>
     <tbody>
-    <tr>
-        <td class="metadataFieldLabel dc_title">ISBN:&nbsp;</td>
-        <td class="metadataFieldValue dc_title">${book.isbn}</td>
-    </tr>
-    <tbody>
-    <tr>
-        <td class="metadataFieldLabel dc_title">Количество:&nbsp;</td>
-        <td class="metadataFieldValue dc_title">${book.amount}</td>
-    </tr>
-    </tbody>
+
 </table>
 <c:import url="/add/foot.jsp"/>
 </body>

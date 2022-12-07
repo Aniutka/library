@@ -28,9 +28,6 @@ public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
     UserBook returnedBook(Integer id);
 
 
-//    @Query("update UserBook set isReturn=0 WHERE isReturn")
-//    String updateBook(Integer isReturn);
-
     @Modifying
     @Query("Update UserBook SET isReturn=:isReturn")
     public void updateBook(@Param("isReturn") Integer isReturn);

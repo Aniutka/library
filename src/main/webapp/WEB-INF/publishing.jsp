@@ -11,12 +11,13 @@
 
 <c:import url="menu.jsp"/>
 
-<div class="container">
 
+<div class="container">
+    <a href="<c:url value="/showCreatePublishing"/>">Добавить автора</a><br>
 <table>
     <tbody>
     <tr>
-        <th>Авторы</th>
+        <th>Издательства</th>
     </tr>
 
     <c:forEach items="${publishingList}" var="publishing">

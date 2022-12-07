@@ -11,6 +11,7 @@
         <input name="name">
         <input type="submit" value="Поиск" class="btn btn-primary"></input>
     </form>
+
     <a href="<c:url value="/showCreateBook"/>">Добавить книгу</a><br>
     <hr>
     <br>
@@ -20,7 +21,7 @@
             <a href="<c:url value="/booksTitle"/>">Заглавие</a><br>
         </li>
         <li class="list-group-item">
-            <a href="<c:url value="/author"/>">Авторы</a><br>
+            <a href="<c:url value="/author/author"/>">Авторы</a><br>
         </li>
         <li class="list-group-item">
             <a href="<c:url value="/publishing"/>">Издательство</a>

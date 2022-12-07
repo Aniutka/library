@@ -5,8 +5,7 @@
 </style>
 <html>
 <head>
-    <title>Title</title>
-    <%--    <c:import url="css/style.css"/>--%>
+    <title>Книги</title>
 </head>
 <body>
 <c:import url="menu.jsp"/>
@@ -26,9 +25,11 @@
         <tr>
 
             <th id="t1" class="oddRowOddCol">Название</th>
-            <th id="t2" class="oddRowEvenCol">Дата выпуска</th>
-            <th id="t3" class="oddRowEvenCol">Автор(ы)</th>
-            <th id="t4" class="oddRowEvenCol">Редакция</th>
+            <th id="t2" class="oddRowOddCol">Жанр</th>
+            <th id="t3" class="oddRowEvenCol">Дата выпуска</th>
+            <th id="t4" class="oddRowEvenCol">Автор(ы)</th>
+            <th id="t5" class="oddRowEvenCol">Редакция</th>
+            <th id="t6" class="oddRowEvenCol">Операции</th>
         </tr>
 
 
@@ -36,10 +37,14 @@
         <tr>
 
             <td headers="t1"><a href="<c:url value="/booksDetails?id=${book.id}"/>">${book.name}</a></td>
-            <td headers="t2"><em>${book.year_publishing}</em></td>
-            <td headers="t3"><em><c:forEach items="${book.authors}" var="author">${author.name}<br></c:forEach></em>
+            <td headers="t2"><em>${book.genre.name}</em></td>
+            <td headers="t3"><em>${book.yearPublishing}</em></td>
+            <td headers="t4"><em><c:forEach items="${book.authors}" var="author">${author.name}<br></c:forEach></em>
             </td>
-            <td headers="t4"><em>${book.publishing.name}</em></td>
+            <td headers="t5"><em>${book.publishing.name}</em></td>
+            <td headers="t6">
+            <a href="<c:url value="/bookDelete?id=${book.id}"/>">Удалить</a><br>
+            <a href="<c:url value="/editBook?id=${book.id}"/>">Изменить</a></td>
         </tr>
         </c:forEach>
 

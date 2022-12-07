@@ -54,6 +54,21 @@
 					</div>
 				</div>
 
+
+				<div class="form-group row"> <spring_form:label class="col-sm-2 col-form-label" path="address">Адрес</spring_form:label>
+
+					<div class="col-sm-10">
+						<spring_form:select path="address">
+							<c:forEach var="item" items="${addressList}">
+								<option value="${item.id}">${item.street}, ${item.building}</option>
+							</c:forEach>
+						</spring_form:select></div></div>
+
+<%--					<spring_form:select path="address">--%>
+<%--						<spring_form:options items="${addressList}"></spring_form:options>--%>
+<%--					</spring_form:select></div>--%>
+
+
 				<input type="submit" value="Зарегестрироваться">
 
 </spring_form:form>

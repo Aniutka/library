@@ -10,11 +10,6 @@
 
 <div class="container">
 
-<%--    <form action="<c:url value="/findUsers"/>">--%>
-<%--        <input name="name">--%>
-<%--        <input type="submit" value="Поиск читателя" class="btn btn-primary"></input>--%>
-<%--    </form>--%>
-
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">

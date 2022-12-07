@@ -2,10 +2,8 @@ package com.library.controller;
 
 import com.library.dto.CreateDto;
 import com.library.dto.UserDto;
-import com.library.model.entity.Author;
-import com.library.model.entity.Book;
-import com.library.model.entity.User;
-import com.library.model.entity.UserBook;
+import com.library.model.entity.*;
+import com.library.service.AddressService;
 import com.library.service.Impl.UserServiceImpl;
 import com.library.service.UserBookService;
 import com.library.service.UserService;
@@ -25,6 +23,7 @@ public class UserController {
 
     private final UserService service;
     private final UserBookService userBookService;
+    private final AddressService addressService;
 
 
     @GetMapping(value = "/users")
@@ -66,7 +65,10 @@ public class UserController {
 
     @GetMapping(value = "/showCreateUser")
     public String showCreateUser(Model model) {
+        List<Address> address = addressService.findAll();
+        List<Address> addressList = addressService.findAll();
         model.addAttribute("registration", new UserDto());
+        model.addAttribute("addressList", addressList);
         return "registration";
     }
 
@@ -75,7 +77,7 @@ public class UserController {
         service.save(userDto);
         var users = service.findAll();
         model.addAttribute("users", users);
-        return "index";
+        return "users";
     }
 
     @PostMapping(value = "/authorization")

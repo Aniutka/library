@@ -32,4 +32,14 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.getReferenceById(id);
     }
 
+    @Override
+    public void save(Author author) {
+        authorRepository.save(author);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        authorRepository.deleteById(id);
+    }
+
 }

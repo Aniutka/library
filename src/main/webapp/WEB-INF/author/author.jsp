@@ -11,16 +11,16 @@
 </head>
 <body>
 
-<c:import url="menu.jsp"/>
+<c:import url="../menu.jsp"/>
 
 <div class="container">
 
-    <form action="<c:url value="/findAuthors"/>">
+    <form action="<c:url value="/author/findAuthors"/>">
         <input name="name">
         <input type="submit" value="Поиск" class="btn btn-primary"></input>
     </form>
 
-    <a href="<c:url value="/showCreateAuthors"/>">Добавить автора</a><br>
+    <a href="<c:url value="/author/showCreateAuthor"/>">Добавить автора</a><br>
     <hr>
     <br>
 
@@ -28,11 +28,13 @@
         <tbody>
         <tr>
             <th>Авторы</th>
+            <th>Операции</th>
         </tr>
 
         <c:forEach items="${author}" var="authorList">
             <tr>
-                <td><a href="<c:url value="/authorBook?id=${authorList.id}"/>">${authorList.name}</a></td>
+                <td><a href="<c:url value="/author/authorBook?id=${authorList.id}"/>">${authorList.name}</a></td>
+            <td><a href="<c:url value="/author/authorDelete?id=${authorList.id}"/>">Удалить</a></td>
             </tr>
         </c:forEach>
 

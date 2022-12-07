@@ -26,6 +26,6 @@ public String logout(HttpServletRequest request) {
         if (authentication != null) {
         request.getSession().invalidate();
         }
-        return "redirect:/";
+        return "/";
         }
 }

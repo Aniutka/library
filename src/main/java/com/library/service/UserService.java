@@ -10,20 +10,24 @@ import java.util.List;
 
 public interface UserService {
     List<User> findAll();
+
     User findById(Integer id);
+
     User findByQuery(String name);
+
     List<User> findByStreet(String street);
-    void saveUser (User user);
+
+    void saveUser(User user);
+
     void save(UserDto userDto);
+
     User getUser(Integer id);
 
     List<User> findByQueryList(String name);
 
-List<Book>getBooks(int id);
+    List<Book> getBooks(int id);
 
-void delete(Integer id);
-//void deleteBook(Integer id);
-
+    void delete(Integer id);
 
 
 }

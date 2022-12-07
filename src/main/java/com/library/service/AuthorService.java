@@ -1,5 +1,6 @@
 package com.library.service;
 
+import com.library.dto.CreateDto;
 import com.library.model.entity.Address;
 import com.library.model.entity.Author;
 import com.library.model.entity.Book;
@@ -15,4 +16,6 @@ public interface AuthorService {
     List<Author> findAll();
     List<Author> findByQueryList(String name);
     Author getAuthor(Integer id);
+    void save(Author author);
+    void delete(Integer id);
 }

@@ -1,5 +1,6 @@
 package com.library.service.Impl;
 
+import com.library.model.entity.Author;
 import com.library.model.entity.Book;
 import com.library.model.entity.Publishing;
 import com.library.model.repository.PublishingRepository;
@@ -28,6 +29,17 @@ public class PublishingServiceImpl implements PublishingService {
     @Override
     public Publishing getPublishing(Integer id) {
             return publishingRepository.getReferenceById(id);
+
+    }
+
+    @Override
+    public void save(Publishing publishing) {
+        publishingRepository.save(publishing);
+    }
+
+
+    @Override
+    public void delete(Integer id) {
 
     }
 }

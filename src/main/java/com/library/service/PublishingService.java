@@ -8,6 +8,12 @@ import java.util.List;
 
 public interface PublishingService {
     Publishing findById(Integer id);
+
     List<Publishing> findAll();
-   Publishing getPublishing(Integer id);
+
+    Publishing getPublishing(Integer id);
+
+    void save(Publishing publishing);
+
+    void delete(Integer id);
 }

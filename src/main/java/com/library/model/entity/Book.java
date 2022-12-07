@@ -17,18 +17,13 @@ public class Book {
     private Integer id;
     @Column
     private String name;
-    @Column
-    private String year_publishing;
-    @Column
-    private Integer number_pages;
-    @Column
-    private Integer isbn;
-    @Column
-    private Integer amount;
+    @Column (name = "year_publishing")
+    private String yearPublishing;
+    @Column (name = "number_pages")
+    private Integer numberPages;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "publishing_id")
     private Publishing publishing;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "genre_id")
     private Genre genre;

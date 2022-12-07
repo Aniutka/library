@@ -18,13 +18,6 @@ public class UserBookImpl implements UserBookService {
 
     @Override
     public void save(UserBook userBook) {
-        var book = new Book();
-//     userBook.setBook(userBook.getBook());
-//     userBook.setUser(userBook.getUser());
-//     userBook.setLocation(userBook.getLocation());
-//     userBook.setOrder_data(userBook.getOrder_data());
-//     userBook.setReturn_data(userBook.getOrder_data());
-
           userBookRepository.save(userBook);
     }
 

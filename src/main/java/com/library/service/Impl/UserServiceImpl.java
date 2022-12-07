@@ -67,14 +67,12 @@ public class UserServiceImpl implements UserService {
         user.setDateRegistration(userDto.getDateRegistration());
         user.setPlaceWork(userDto.getPlaceWork());
         user.setRoles(Collections.singletonList(Role.ROLE_USER));
-//        user.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
-//        var addressId = userDto.getAddressId();
-//        if(addressId!=null){
-//            var address=addressRepository.getReferenceById(addressId);
-//           user.setAddress(address);
-
+        var addressId = userDto.getAddress();
+        var address = addressRepository.getReferenceById(addressId);
+        user.setAddress(address);
         userRepository.save(user);
     }
+
 
     @Override
     public User getUser(Integer id) {
@@ -92,15 +90,6 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-//    @Override
-//    public void deleteBook(Integer id) {
-//            List<UserBook> userBooks = userBookRepository.findBooksByUser(id);
-//            userBooks.remove()
-//            for(UserBook userBook: userBooks ) {
-//                books.add(userBook.getBook());
-//            }
-//            return books;
-//        }
 }
 
 
