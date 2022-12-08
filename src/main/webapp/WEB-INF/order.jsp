@@ -15,7 +15,7 @@
         Книга: ${userBooks.book.name} </p>
 
     <a href="<c:url value="/"/>">На главную</a>
-    <a href="<c:url value="/booksTitle"/>">К каталогу книг</a>
+    <a href="<c:url value="/booksTitle"/>">   К каталогу книг</a>
 
 </div>
 <c:import url="/add/foot.jsp"/>

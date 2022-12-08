@@ -7,6 +7,8 @@ import com.library.service.LocationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class LocationServiceImpl implements LocationService {
@@ -14,5 +16,10 @@ public class LocationServiceImpl implements LocationService {
     @Override
     public Location findById(Integer id) {
         return locationRepository.getReferenceById(id);
+    }
+
+    @Override
+    public List<Location> findAll() {
+        return locationRepository.findAll();
     }
 }

@@ -16,7 +16,18 @@
             <form method="get" action="<c:url value="/orderBook"/>">
                 <input type="hidden" value="${id}" name="idBook"><br>
                 <label>Читательский билет №</label><input class="form-control" name="idUser"><br>
-                <label>Локация</label><input class="form-control" name="location"><br>
+
+                <div class="form-group row">
+                <div class="col-sm-10">
+                    <select name="location">
+                        <c:forEach var="item" items="${locations}">
+                            <option value="${item.id}">${item.name}</option>
+                        </c:forEach>
+                    </select></div></div>
+            <br>
+                <br>
+
+<%--                <label>Локация</label><input class="form-control" name="location"><br>--%>
                 <input type="submit" class="btn btn-success" value="Заказать">
             </form>
         </div>

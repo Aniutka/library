@@ -13,7 +13,7 @@
 
 
 <div class="container">
-    <a href="<c:url value="/showCreatePublishing"/>">Добавить автора</a><br>
+    <a href="<c:url value="/showCreatePublishing"/>">Добавить издательство</a><br>
 <table>
     <tbody>
     <tr>

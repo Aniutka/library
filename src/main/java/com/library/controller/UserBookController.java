@@ -30,7 +30,9 @@ public class UserBookController {
 
     @GetMapping(value = "/showorderBook")
     public String orderBook(@RequestParam Integer id, Model model) {
+       List<Location> locations =  locationService.findAll();
         model.addAttribute("id", id);
+        model.addAttribute("locations", locations);
         return "orderBook";
     }
 
@@ -40,20 +42,27 @@ public class UserBookController {
         userBook.setUser(userService.findById(idUser));
         userBook.setBook(bookService.findById(idBook));
         userBook.setLocation(locationService.findById(location));
-        userBook.setOrder_data(Calendar.getInstance());
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, 1);
-        userBook.setReturn_date(cal);
+
+        userBook.setOrder_data(LocalDate.now());
+
+//        userBook.setOrder_data(Calendar.getInstance());
+//        Calendar cal = Calendar.getInstance();
+//        cal.add(Calendar.MONTH, 1);
+//        userBook.setReturn_date(cal);
+        userBook.setReturn_date(LocalDate.now().plusMonths(1));
         userBook.setIsReturn(1);
         userBookService.save(userBook);
         model.addAttribute("userBooks", userBook);
+
         return "order";
     }
 
     @GetMapping(value = "/UserBookReturned")
     public String refundBook(@RequestParam Integer id, Model model) {
        userBookService.returnedBook(id);
-        return "index";
+        List<UserBook> usersBooks = userBookService.findAll();
+        model.addAttribute("userBooks", usersBooks);
+        return "userBooks";
     }
 
 

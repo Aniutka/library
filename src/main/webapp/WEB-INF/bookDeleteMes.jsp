@@ -10,8 +10,8 @@
 <center>
 <div>
     <p  style="color: black">Вы уверены, что хотите удалить книгу:   ${book.name}</p>
-    <a href="<c:url value="/deleteB?id=${book.id}"/>">Удалить</a>
-    <a href="<c:url value="/"/>">          Назад</a>
+    <a href="<c:url value="/deleteBook?id=${book.id}"/>">Удалить</a>
+    <a href="<c:url value="/"/>">  Назад</a>
 </div>
 </center>
 

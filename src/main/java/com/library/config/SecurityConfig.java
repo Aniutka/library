@@ -45,11 +45,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/registration").not().fullyAuthenticated();
-//                .antMatchers(HttpMethod.GET, "/users").hasRole("USER")
-//                .antMatchers(HttpMethod.GET, "/users").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.GET, "/usersBooks").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.GET, "/registration").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.GET, "/showCreateUser").hasRole("ADMIN");
+//                .antMatchers(HttpMethod.GET, "/users").hasRole("USER")    .antMatchers(HttpMethod.GET, "/showCreateBook").hasRole("ADMIN")
+////                .antMatchers(HttpMethod.GET, "/users").hasRole("ADMIN")
+////                .antMatchers(HttpMethod.GET, "/usersBooks").hasRole("ADMIN");
+////                .antMatchers(HttpMethod.GET, "/registration").hasRole("ADMIN")
+////               .antMatchers(HttpMethod.GET, "/showCreateUser").hasRole("ADMIN");
+//
 
         http
                 .logout()

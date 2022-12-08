@@ -38,13 +38,15 @@ public class UserBook {
 
     @ToString.Exclude
     @Column
-    @Temporal(TemporalType.DATE)
-    private Calendar order_data;
+//    @Temporal(TemporalType.DATE)
+//    private Calendar order_data;
+   private LocalDate order_data;
 
     @ToString.Exclude
     @Column
-    @Temporal(TemporalType.DATE)
-    private Calendar return_date;
+//    @Temporal(TemporalType.DATE)
+//    private Calendar return_date;
+    private LocalDate return_date;
 
    @Column(name = "return_book")
     private Integer isReturn;

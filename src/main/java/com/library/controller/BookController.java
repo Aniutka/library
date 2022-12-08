@@ -88,8 +88,8 @@ public class BookController {
         return "bookDeleteMes";
     }
 
-    @GetMapping("/deleteB")
-    public String delete1(@RequestParam Integer id,Model model) {
+    @GetMapping("/deleteBook")
+    public String deleteBook(@RequestParam Integer id,Model model) {
         bookService.delete(id);
         var books = bookService.findAll();
         model.addAttribute("books", books);
@@ -108,6 +108,8 @@ public class BookController {
     @PostMapping("/bookUpdate")
     public String update(@ModelAttribute(value = "bookUpdate") UpdateBookDto updateBookDto, Model model) {
         bookService.update(updateBookDto);
+        var books = bookService.findAll();
+        model.addAttribute("books", books);
         return "booksTitle";
     }
 }
